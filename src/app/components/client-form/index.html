@@ -1,0 +1,23 @@
+<form (ngSubmit)="addClient()" #clientForm="ngForm">
+  <div>
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" [(ngModel)]="client.name" name="name" required>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="client.email" name="email" required>
+  </div>
+  <div>
+    <label for="sharedKey">Clave Compartida:</label>
+    <input type="text" id="sharedKey" [(ngModel)]="client.sharedKey" name="sharedKey" required>
+  </div>
+  <div>
+    <label for="phoneNumber">Número de Teléfono:</label>
+    <input type="text" id="phoneNumber" [(ngModel)]="client.phoneNumber" name="phoneNumber">
+  </div>
+  <button type="submit">Agregar Cliente</button>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+</form>
